@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wzory Tradingowe</title>
+    <style>
+        body {
+            background-color: #0f0f0f;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            color: #81d896;
+            margin-bottom: 20px;
+        }
+        .pattern-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 20px;
+            justify-items: center;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .pattern {
+            background-color: #202020;
+            border: 1px solid #81d896;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            cursor: pointer;
+        }
+        .pattern img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* Lightbox overlay style */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 5px solid #81d896;
+            border-radius: 10px;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: #81d896;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Wzory Tradingowe</h1>
+
+    <div class="pattern-container">
+        <div class="pattern" onclick="openLightbox('wzór1.png')">
+            <img src="wzór1.png" alt="Wzór 1">
+        </div>
+        <div class="pattern" onclick="openLightbox('wzór2.png')">
+            <img src="wzór2.png" alt="Wzór 2">
+        </div>
+        <div class="pattern" onclick="openLightbox('wzór3.png')">
+            <img src="wzór3.png" alt="Wzór 3">
+        </div>
+        <div class="pattern" onclick="openLightbox('wzór4.png')">
+            <img src="wzór4.png" alt="Wzór 4">
+        </div>
+        <div class="pattern" onclick="openLightbox('wzór5.png')">
+            <img src="wzór5.png" alt="Wzór 5">
+        </div>
+        <div class="pattern" onclick="openLightbox('wzór6.png')">
+            <img src="wzór6.png" alt="Wzór 6">
+        </div>
+        <div class="pattern" onclick="openLightbox('wzór7.png')">
+            <img src="wzór7.png" alt="Wzór 7">
+        </div>
+        <div class="pattern" onclick="openLightbox('wzór8.png')">
+            <img src="wzór8.png" alt="Wzór 8">
+        </div>
+        <div class="pattern" onclick="openLightbox('wzór9.png')">
+            <img src="wzór9.png" alt="Wzór 9">
+        </div>
+        <div class="pattern" onclick="openLightbox('wzór10.png')">
+            <img src="wzór10.png" alt="Wzór 10">
+        </div>
+        <div class="pattern" onclick="openLightbox('wzór11.png')">
+            <img src="wzór11.png" alt="Wzór 11">
+        </div>
+        <div class="pattern" onclick="openLightbox('wzór12.png')">
+            <img src="wzór12.png" alt="Wzór 12">
+        </div>
+        <div class="pattern" onclick="openLightbox('wzór13.png')">
+            <img src="wzór13.png" alt="Wzór 13">
+        </div>
+        <div class="pattern" onclick="openLightbox('wzór14.png')">
+            <img src="wzór14.png" alt="Wzór 14">
+        </div>
+    </div>
+
+    <!-- Lightbox overlay -->
+    <div class="lightbox" id="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="Powiększone zdjęcie">
+    </div>
+
+    <script>
+        // Funkcja otwierająca lightbox z wybranym zdjęciem
+        function openLightbox(imgSrc) {
+            document.getElementById('lightbox').style.display = 'flex';
+            document.getElementById('lightbox-img').src = imgSrc;
+        }
+
+        // Funkcja zamykająca lightbox
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
